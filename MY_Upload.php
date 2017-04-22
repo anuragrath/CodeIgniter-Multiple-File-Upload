@@ -9,7 +9,7 @@ class MY_Upload extends CI_Upload {
 	public function do_multi_upload( $field = 'userfile', $return_info = TRUE, $filenames = NULL ){
 
 		// Is $_FILES[$field] set? If not, no reason to continue.
-		if ( ! isset($_FILES[$field]))
+		if ( empty($_FILES[$field]) )
 		{
 			
 			$this->set_error('upload_no_file_selected');
